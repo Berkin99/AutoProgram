@@ -21,8 +21,11 @@ class ARCalendar:
 			else: i += 1
 		self.updateDays()
 
+	"""
+	Append programs with intersection control 
+	"""
 	def appendSafe(self, prog:ARProgram) -> bool:
-		if self.isIntersect(prog) or self.contains(prog): return False
+		if self.isIntersect(prog): return False
 		self.append(prog)
 		return True
 
@@ -55,12 +58,18 @@ class ARCalendar:
 				j += 1
 		return True
 	
+	"""
+	Sum priority of the programs in the calendar. 
+	"""
 	def getPrisum(self):
 		i = 0 
 		for prog in self.programs: i += prog.priority
 		return i
 	
-	def getDays(self): return ARClass.binaryDay(self.days)
+	"""
+	Occupied days list.
+	"""
+	def getDays(self) -> list[str]: return ARClass.binaryDay(self.days)
 
 	def updateDays(self):
 		self.days = 0

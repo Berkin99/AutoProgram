@@ -11,16 +11,15 @@ from arlib import *
 
 if __name__ == '__main__':
 
-	cal = ARCalendar()
-	cal.load('calendar.csv')
-
+	#Load the programs to the scheduler
 	sch = ARScheduler()
-	sch.setCourses(cal.programs)
+	sch.load('calendar.csv')
 
 	# This function specifies the unique requirements for your calendar
 	# All calendar combinations are tested in this check function. 
+	# Change this function for your calendar requirements, if calendar is as you wanted return True 
 	def req(cal:ARCalendar):
-		return (len(cal.getDays()) == 2) and (len(cal.programs) == 4)
+		return (len(cal.getDays()) == 2) and (len(cal.programs) == 5)
 
 	sch.schedule(req,ARCalendar())
 	sch.printSelf()

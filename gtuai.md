@@ -1,6 +1,6 @@
 # GTU AI Master of Science Course List
 
-## A : Bilimsel H. : 4
+## A : Scientific Preparation : 4
 ### A1 : Introduction to Programming 
 * BENG 215 Python for Bioengineers
 * CSE 102 Computer Programming
@@ -18,7 +18,7 @@
 * MAT 116 Linear Algebra
 * MAT 217 Linear Algebra and Differantial Equations
 
-## X : Zorunlu : 3
+## X : Compulsory : 3
 ### X1 : Machine Learning 
 * CSE 552 Machine Learning
 * STEC 563 Advanced Machine Learning
@@ -27,7 +27,7 @@
 ### X3 : Research Techniques, Philosophy & Ethics 
 * INAS 501 Scientific Research Methods and Publication Ethics
 
-## Y : Temel Alan : 1 
+## Y : Core Area : 1 
 * CSE 557 Data Mining
 * IE 512 Advanced Statistical Modeling and Data Mining
 * CSE 553 Pattern Recognition
@@ -36,7 +36,7 @@
 * BENG 520 Computational Neruscience
 * CSE 655 Deep Learning and Applications
 
-## Z : Temel Uygulama : 1
+## Z : Core Application : 1
 * CSE 626 Symbolic Computation
 * CSE 512 Game Theory
 * ECON 714 Game Theory
@@ -53,7 +53,7 @@
 * ELEC 567 Digital Signal Processing
 * STEC 564 Reinforcement Learning
 
-## Q : Alan Uygulama : 1
+## Q : Area Application : 1
 * CSE 562 Augmented Reality and 3D User Interfaces
 * IE 514 Mathematical Foundations of Operations Research
 * IE 515 Mathematical Programming

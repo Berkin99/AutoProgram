@@ -13,14 +13,14 @@ __all__ = ['ARScheduler']
 class ARScheduler:
 
 	def __init__(self):
-		self.courses:list[ARProgram] = []
-		self.coursesLen = 0
+		self.programs:list[ARProgram] = []
+		self.programsLen = 0
 		self.calendars:list[ARCalendar] = []
 		self.iteration = 0
 
-	def setCourses(self, pList:list[ARProgram]=[]):
-		self.courses = pList
-		self.coursesLen = len(pList)
+	def setPrograms(self, pList:list[ARProgram]=[]):
+		self.programs = pList
+		self.programsLen = len(pList)
 
 	"""
 	Scheduler looks for every possible calendar and checks it with
@@ -31,7 +31,7 @@ class ARScheduler:
 	def schedule(self, request, cal:ARCalendar = ARCalendar(), index=0):
 		self.iteration += 1
 		
-		if index == self.coursesLen: #End of the tree -> test the request function:
+		if index == self.programsLen: #End of the tree -> test the request function:
 			if request(cal) > 0:
 				print("Found: " + str(self.iteration)) 
 				self.calendars.append(cal.copy()) 
@@ -39,7 +39,7 @@ class ARScheduler:
 		
 		#Current Not Appended
 		self.schedule(request, cal.copy(), index + 1) 
-		if not cal.appendSafe(self.courses[index]): return #Return = no append counted already
+		if not cal.appendSafe(self.programs[index]): return # No append state counted already
 
 		#Current Appended
 		self.schedule(request, cal.copy(), index + 1)
@@ -49,6 +49,11 @@ class ARScheduler:
 			print("Calendar [{:d}]".format(i)) 
 			self.calendars[i].printSelf()
 	
+	def load(self, filename = 'calendar.csv'):
+		cal = ARCalendar()
+		cal.load(filename)
+		self.setPrograms(cal.programs)
+
 	def export(self, path=""):
 		os.mkdir('exports')
 		for i in range(len(self.calendars)): self.calendars[i].save(path + "exports/calendar["+str(i)+"].csv")

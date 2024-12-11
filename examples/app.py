@@ -18,8 +18,14 @@ if __name__ == '__main__':
 	# This function specifies the unique requirements for your calendar
 	# All calendar combinations are tested in this check function. 
 	# Change this function for your calendar requirements, if calendar is as you wanted return True 
+	
+	# def req(cal:ARCalendar):
+	# 	days = cal.getDays()
+	# 	return (len(days) == 2 and days.__contains__("mon") and days.__contains__("tue"))
+
 	def req(cal:ARCalendar):
-		return (len(cal.getDays()) == 2) and (len(cal.programs) == 5)
+		days = cal.getDays()
+		return (len(days) == 2 and len(cal.programs) >= 5)
 
 	sch.schedule(req,ARCalendar())
 	sch.printSelf()

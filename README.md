@@ -25,7 +25,7 @@ Usecase :
 * "ARScheduler" schedules every possible combination of programs. And tests it with requirements.
 
 ### calendar.csv
-* csv formatting : <programname>,<priority>,<date1>,<date2>,<date3>...
+* csv formatting : programname,priority>,date1,date2,date3...
 
 ### Usage :
 1. Fill the example calendar
